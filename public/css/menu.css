@@ -1,0 +1,171 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.title {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -2%;
+    padding: 0 1rem;
+}
+
+.search-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.input-field {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.filters {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+    overflow: auto;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #D8FFD7;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #00B700;
+}
+
+.filter .bi {
+    color: #00B700;
+}
+
+.filter.selected {
+    padding-left: 1.25rem;
+    box-shadow: 0 0 0 0.0625rem #00B700 inset;
+}
+
+.filter:not(.selected) .bi {
+    display: none;
+}
+
+.filter-radio {
+    display: none;
+}
+
+.menus {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.menus.hide {
+    display: none;
+}
+
+.menus-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -2%;
+}
+
+.menus-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10.875rem, 1fr));
+    gap: 2rem;
+}
+
+.menu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu.hide {
+    display: none;
+}
+
+.menu-image {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.menu-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.menu-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -2%;
+    word-break: break-word;
+}
+
+.menu-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.menu-price {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.menus-empty-message {
+    display: none;
+}
+
+.menus-empty-message.show {
+    display: block;
+}
+
+@media (max-width: 576px) {
+    .menus-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .page {
+        gap: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .title {
+        padding: 0 4rem;
+    }
+
+    .search-form {
+        padding: 0 4rem;
+    }
+
+    .filters {
+        padding: 0 4rem;
+    }
+
+    .menus {
+        gap: 4rem;
+        padding: 0 4rem;
+    }
+
+    .menus-list {
+        gap: 4rem 2rem;
+    }
+}
