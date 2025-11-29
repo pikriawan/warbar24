@@ -15,18 +15,18 @@ function applyFilter() {
     switch (category) {
         case "all":
             document.getElementById("filterAll").parentElement.classList.add("selected");
-            foods.classList.remove("hide");
-            drinks.classList.remove("hide");
+            foods?.classList.remove("hide");
+            drinks?.classList.remove("hide");
             break;
         case "foods":
             document.getElementById("filterFoods").parentElement.classList.add("selected");
-            foods.classList.remove("hide");
-            drinks.classList.add("hide");
+            foods?.classList.remove("hide");
+            drinks?.classList.add("hide");
             break;
         case "drinks":
             document.getElementById("filterDrinks").parentElement.classList.add("selected");
-            foods.classList.add("hide");
-            drinks.classList.remove("hide");
+            foods?.classList.add("hide");
+            drinks?.classList.remove("hide");
     }
 }
 
@@ -67,17 +67,17 @@ function search(form) {
     });
 
     const foodsEmptyMessage = document.getElementById("foodsEmptyMessage");
-    foodsEmptyMessage.classList.remove("show");
+    foodsEmptyMessage?.classList.remove("show");
 
     if (foods.every((food) => food.classList.contains("hide"))) {
-        foodsEmptyMessage.classList.add("show");
+        foodsEmptyMessage?.classList.add("show");
     }
 
     const drinksEmptyMessage = document.getElementById("drinksEmptyMessage");
-    drinksEmptyMessage.classList.remove("show");
+    drinksEmptyMessage?.classList.remove("show");
 
     if (drinks.every((drink) => drink.classList.contains("hide"))) {
-        drinksEmptyMessage.classList.add("show");
+        drinksEmptyMessage?.classList.add("show");
     }
 }
 

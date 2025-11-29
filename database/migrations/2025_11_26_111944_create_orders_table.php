@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained('customers');
             $table->foreignId('admin_id')->constrained('admins');
+            $table->string('session_id')->nullable();
             $table->string('table_number');
             $table->enum('status', ['pending', 'processing', 'completed', 'canceled']);
             $table->text('notes');
@@ -22,6 +22,11 @@ return new class extends Migration
             $table->timestamp('finished_at');
             $table->timestamp('canceled_at');
             $table->timestamps();
+
+            $table->foreign('session_id')
+                ->references('id')
+                ->on('sessions')
+                ->onDelete('cascade');
         });
     }
 
