@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->constrained('orders');
             $table->foreignId('admin_id')->constrained('admins');
-            $table->enum('method', ['cash', 'digital']);
+            $table->enum('status', ['pending', 'completed', 'canceled']);
             $table->timestamp('finished_at');
             $table->timestamp('canceled_at');
             $table->timestamps();
