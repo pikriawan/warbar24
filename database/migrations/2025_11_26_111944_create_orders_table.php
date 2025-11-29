@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('admin_id')->constrained('admins');
+            $table->foreignId('admin_id')->nullable()->constrained('admins');
             $table->string('session_id')->nullable();
-            $table->string('table_number');
-            $table->enum('status', ['pending', 'processing', 'completed', 'canceled']);
-            $table->text('notes');
-            $table->timestamp('processed_at');
-            $table->timestamp('finished_at');
-            $table->timestamp('canceled_at');
+            $table->string('table_number')->default(1);
+            $table->enum('status', ['pending', 'processing', 'completed', 'canceled'])->default('pending');
+            $table->text('notes')->nullable();
+            $table->timestamp('processed_at')->nullable();
+            $table->timestamp('finished_at')->nullable();
+            $table->timestamp('canceled_at')->nullable();
             $table->timestamps();
 
             $table->foreign('session_id')

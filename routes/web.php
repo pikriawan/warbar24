@@ -3,6 +3,9 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MessageController;
+use App\Http\Resources\OrderResource;
+use App\Models\Order;
+use Illuminate\Container\Attributes\Log;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,6 +15,10 @@ Route::get('/', function () {
 Route::post('/message', [MessageController::class, 'store']);
 
 Route::get('/menu', [MenuController::class, 'show']);
+
+Route::get('/order/{id}', function (string $id) {
+    return new OrderResource(Order::find($id));
+});
 
 Route::get('/admin', function () {
     return redirect('admin/dashboard');
