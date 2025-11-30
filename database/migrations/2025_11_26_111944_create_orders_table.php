@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('admin_id')->nullable()->constrained('admins');
             $table->string('session_id')->nullable();
             $table->string('table_number')->default(1);
-            $table->enum('status', ['pending', 'processing', 'completed', 'canceled'])->default('pending');
+            $table->enum('status', ['pending', 'processing', 'completed', 'canceled'])->nullable();
             $table->text('notes')->nullable();
             $table->timestamp('processed_at')->nullable();
             $table->timestamp('finished_at')->nullable();

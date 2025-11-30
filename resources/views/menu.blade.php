@@ -1,5 +1,5 @@
 <x-customer-layout>
-    @push('styles')
+    {{-- @push('styles')
         <link rel="stylesheet" href="/css/menu.css">
     @endpush
     <h1 class="title">Mau pesan apa hari ini?</h1>
@@ -70,5 +70,9 @@
     @endif
     @push('scripts')
         <script src="/js/menu.js"></script>
-    @endpush
+    @endpush --}}
+    <form action="/api/order" method="post">
+        @csrf
+        <button>Create order</button>
+    </form>
 </x-customer-layout>
