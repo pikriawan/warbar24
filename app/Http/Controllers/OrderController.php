@@ -2,39 +2,55 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\OrderResource;
 use App\Models\Order;
-use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\JsonResponse;
 
 class OrderController extends Controller
 {
-    public function showAll(Request $request): JsonResource
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(): JsonResponse
     {
-        try
-        {
-            return OrderResource::collection(Order::whereSessionId(session()->getId())->get());
-        }
-        catch (Exception $e)
-        {
-            return new JsonResource([]);
-        }
+        $sessionId = session()->getId();
+
+        $orders = Order::whereSessionId($sessionId)
+            ->where('status', '!=', null)
+            ->get();
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'orders' => $orders
+            ]
+        ]);
     }
 
-    public function show(Request $request, string $id): JsonResource
+    /**
+     * Display the specified resource.
+     */
+    public function show($id): JsonResponse
     {
-        return new OrderResource(Order::find($id));
-    }
+        $sessionId = session()->getId();
 
-    public function store(Request $request): JsonResource
-    {
-        $order = new Order(['session_id' => session()->getId()]);
-        $order->save();
+        $order = Order::find($id);
 
-        return new JsonResource([
-            'status' => true,
-            'message' => 'Order created',
+        if (!$order) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Order not found'
+            ], 404);
+        }
+
+        if ($order->session_id != $sessionId) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Unauthorized'
+            ], 401);
+        }
+
+        return response()->json([
+            'success' => true,
             'data' => [
                 'order' => $order
             ]

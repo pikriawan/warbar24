@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('order_id')->constrained('orders');
             $table->foreignId('admin_id')->constrained('admins');
             $table->enum('status', ['pending', 'completed', 'canceled']);
-            $table->timestamp('finished_at');
-            $table->timestamp('canceled_at');
+            $table->timestamp('finished_at')->nullable();
+            $table->timestamp('canceled_at')->nullable();
             $table->timestamps();
         });
     }

@@ -11,6 +11,12 @@ class Menu extends Model
         'name',
         'category',
         'stock',
-        'price'
+        'price',
+        'image'
     ];
+
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
 }

@@ -16,4 +16,9 @@ class Order extends Model
         'finished_at',
         'canceled_at'
     ];
+
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
 }

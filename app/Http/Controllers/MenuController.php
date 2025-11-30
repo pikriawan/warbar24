@@ -7,7 +7,11 @@ use Illuminate\View\View;
 
 class MenuController extends Controller
 {
-    public function show(): View
+    protected $fillable = [
+        
+    ];
+
+    public function index(): View
     {
         return view('menu', [
             'foods' => Menu::where('category', 'food')->get(),
