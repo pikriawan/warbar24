@@ -1,0 +1,326 @@
+/* ============================================
+   GLOBAL RESET & BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    color: #222;
+    min-height: 100vh;
+}
+
+/* ============================================
+   PROFIL ADMIN STYLES
+   ============================================ */
+.card {
+    background: #fff;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Layout Profil - Single Column untuk Konsistensi */
+.profil-form {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Foto Preview Section */
+.foto-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.foto-preview {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.foto-preview:hover {
+    border-color: #00C200;
+    box-shadow: 0 6px 16px rgba(0,194,0,0.2);
+}
+
+.foto-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto-preview .no-foto {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    font-size: 52px;
+    color: #aaa;
+}
+
+.foto-upload-info {
+    text-align: center;
+}
+
+.foto-upload-info label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="file"] {
+    padding: 8px;
+    background: #f8f8f8;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+}
+
+input[type="file"]:hover {
+    background: #fff;
+    border-color: #00C200;
+}
+
+.foto-upload-info small {
+    display: block;
+    margin-top: 8px;
+    color: #666;
+    font-size: 12px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    background-color: #fafafa;
+}
+
+.form-group input:focus {
+    border-color: #00C200;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0,194,0,0.12);
+    outline: none;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* Section Divider */
+hr {
+    border: none;
+    border-top: 2px solid #f0f0f0;
+    margin: 30px 0;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00C200;
+    display: inline-block;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.btn {
+    padding: 11px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: #00C200;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,194,0,0.3);
+}
+
+.btn-primary:hover {
+    background-color: #00a000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,194,0,0.4);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    box-shadow: 0 2px 6px rgba(108,117,125,0.3);
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108,117,125,0.4);
+}
+
+/* ============================================
+   ALERT STYLES
+   ============================================ */
+.alert {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert::before {
+    content: "";
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.alert-success {
+    background-color: #e8f8ec;
+    color: #1e7a33;
+    border-left: 4px solid #00C200;
+    position: relative;
+}
+
+.alert-danger {
+    background-color: #fbeaea;
+    color: #b3261e;
+    border-left: 4px solid #e74c3c;
+    position: relative;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .card {
+        padding: 25px 20px;
+    }
+    
+    .profil-form {
+        max-width: 100%;
+    }
+    
+    .foto-preview {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .login-container {
+        max-width: 90%;
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        max-width: 95%;
+        padding: 30px 20px;
+    }
+    
+    .foto-preview {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .foto-preview .no-foto {
+        font-size: 42px;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.card {
+    animation: popIn 0.4s ease;
+}

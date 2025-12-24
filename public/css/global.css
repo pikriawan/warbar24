@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+}
+
+.button-base {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 0;
+    border-radius: 0.5rem;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+}
+
+.button-center {
+    padding: 1rem 0;
+    justify-content: center;
+}
+
+.button-full {
+    width: 100%;
+}
+
+.button-primary {
+    background-color: #00B700;
+    color: white;
+}
+
+.button-outlined {
+    background-color: white;
+    color: #00B700;
+    box-shadow: 0 0 0 0.0625rem #00B700 inset;
+}
+
+.button-icon .bi {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.button-icon-start {
+    padding: 1rem 1.5rem 1rem 1.25rem;
+}
+
+.button-icon-end {
+    padding: 1rem 1.25rem 1rem 1.5rem;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.input {
+    font-family: "Outfit", sans-serif;
+    padding: 1rem;
+    background-color: #E7E7E7;
+    border: 0;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.input::placeholder {
+    font-family: "Outfit", sans-serif;
+    font-size: 0.875rem;
+    color: #888888;
+}
+
+.input:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.0625rem #888888 inset;
+}
+
+.navbar-brand-container img,
+.footer-brand-container img {
+    width: 140px;    
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand-container img,
+    .footer-brand-container img {
+        width: 115px;
+    }
+}

@@ -1,0 +1,288 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Wrapper untuk table dengan scroll horizontal */
+.table-wrapper {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    margin: 0 -20px;
+    padding: 0 20px;
+}
+
+/* Custom scrollbar untuk desktop */
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.order-table thead {
+    border-bottom: 1px solid #e0e0e0;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.order-table th {
+    text-align: left;
+    padding: 12px 8px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.order-table td {
+    padding: 16px 8px;
+    font-size: 13px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.order-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.status-badge {
+    padding: 4px 0;
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+/* Status Pembayaran */
+.status-belum-dibayar {
+    color: #dc3545;
+}
+
+.status-dibayar {
+    color: #28a745;
+}
+
+/* Status Pesanan */
+.status-belum-diproses {
+    color: #dc3545;
+}
+
+.status-diproses {
+    color: #ff8c00;
+}
+
+.status-selesai {
+    color: #28a745;
+}
+
+.status-dibatalkan {
+    color: #6c757d;
+}
+
+.btn-action {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-action:hover {
+    background-color: #218838;
+}
+
+.btn-action:active {
+    transform: scale(0.95);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state p {
+    color: #999;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-order-now {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.btn-order-now:hover {
+    background-color: #218838;
+}
+
+/* Responsive untuk tablet */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px 8px;
+    }
+    
+    .container {
+        padding: 15px;
+        border-radius: 6px;
+    }
+    
+    h1 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .table-wrapper {
+        margin: 0 -15px;
+        padding: 0 15px;
+    }
+    
+    .order-table {
+        min-width: 800px;
+    }
+    
+    .order-table th {
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+    
+    .order-table td {
+        padding: 14px 6px;
+        font-size: 12px;
+    }
+    
+    .status-badge {
+        font-size: 12px;
+    }
+    
+    .btn-action {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .empty-state {
+        padding: 50px 15px;
+    }
+
+    .empty-state p {
+        font-size: 14px;
+    }
+}
+
+/* Responsive untuk mobile */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px 5px;
+    }
+    
+    .container {
+        padding: 12px;
+        border-radius: 4px;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .table-wrapper {
+        margin: 0 -12px;
+        padding: 0 12px;
+    }
+    
+    .order-table {
+        min-width: 700px;
+    }
+    
+    .order-table th {
+        padding: 8px 5px;
+        font-size: 11px;
+    }
+    
+    .order-table td {
+        padding: 12px 5px;
+        font-size: 11px;
+    }
+    
+    .status-badge {
+        font-size: 11px;
+    }
+    
+    .btn-action {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+    }
+
+    .empty-state {
+        padding: 40px 10px;
+    }
+
+    .empty-state p {
+        font-size: 13px;
+    }
+}
+
+/* Indikator scroll untuk mobile */
+@media screen and (max-width: 768px) {
+    .table-wrapper::after {
+        content: '← Geser untuk melihat lebih banyak →';
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 11px;
+        color: #999;
+        font-style: italic;
+    }
+    
+    .table-wrapper.scrolled::after {
+        display: none;
+    }
+}

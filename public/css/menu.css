@@ -1,0 +1,313 @@
+/* === Umum === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #222;
+}
+
+/* === Bar Promo === */
+.promo-bar {
+  background: #00B700;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+/* === Header === */
+.navbar {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 60px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00B700;
+}
+
+.nav-links a {
+  color: #222;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #00B700;
+}
+
+.btn-cart {
+  background: #00B700;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* === Judul === */
+.judul {
+  text-align: left;
+  width: 90%;
+  margin: 30px auto 10px;
+}
+
+.judul h2 {
+  font-size: 20px;
+}
+
+/* === Search === */
+.search-section {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.search-section label {
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  background: #00B700;
+  border: 0;
+  color: white;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 8px 12px;
+  text-shadow: 0 0.0625em 0 #fff;
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+
+.search-bar button:active {
+  translate: 0 0.225em;
+  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+}
+
+
+/* === Filter === */
+.filter-bar {
+  text-align: left;
+  width: 90%;
+  margin: 15px auto;
+}
+
+.filter-bar button {
+  margin-right: 8px;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-bar button:hover {
+  background: #00B700;
+  color: #fff;
+}
+
+.filter-bar button.active {
+  background: #00B700;
+  color: #fff;
+  border-color: #00B700;
+}
+
+
+/* === Kategori === */
+.kategori {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.kategori h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* === Grid Menu === */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Versi Mobile (<= 600px) */
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom tetap */
+    gap: 14px; /* sedikit lebih rapat di mobile */
+  }
+}
+
+/* Versi Tablet (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+/* Versi Desktop (>1024px) */
+@media (min-width: 1025px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+/* === Kartu Menu === */
+.item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.item:hover {
+  transform: translateY(-3px);
+}
+
+.item img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.item img.gambar-habis {
+  filter: grayscale(100%) brightness(85%);
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.item .tag {
+  background: #ff7b00;
+  color: white;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.item h3 {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 8px 0 4px;
+}
+
+.item .harga {
+  font-size: 15px;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.item .stok {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+/* === Tombol Tambah ke Keranjang / Habis === */
+.btn-cart-add {
+  background: #00B700;
+  color: white;
+  border: none;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  width: 80%;
+  align-self: center;
+  min-height: 34px; /* tinggi tombol tetap */
+  transition: all 0.3s ease;
+}
+
+.btn-cart-add:hover:enabled {
+  background: #009500;
+}
+
+.btn-cart-add:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Efek kartu habis (pudar) */
+.item:has(.btn-cart-add:disabled) {
+  opacity: 0.8;
+  filter: grayscale(20%);
+}
+
+/* === Footer === */
+.footer {
+  background: #00B700;
+  color: #fff;
+  padding: 40px 60px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-column p,
+.footer-column a {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 13px;
+  text-align: center;
+  color: #dfffd9;
+}
+
